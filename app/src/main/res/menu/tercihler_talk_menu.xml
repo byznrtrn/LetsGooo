@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/TercihlerTalk"
+        android:title="@string/talk">
+    </item>
+
+    <item
+        android:id="@+id/TercihlerTalkBilinmiyor"
+        android:title="@string/bilinmiyor">
+    </item>
+
+    <item
+        android:id="@+id/TercihlerNoTalk"
+        android:title="@string/no_talk">
+    </item>
+
+</menu>

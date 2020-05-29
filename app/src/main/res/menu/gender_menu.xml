@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/genderErkek"
+        android:title="Erkek">
+    </item>
+
+    <item
+        android:id="@+id/genderBilinmiyor"
+        android:title="Bilinmiyor">
+    </item>
+
+    <item
+        android:id="@+id/genderKadin"
+        android:title="Kadın">
+    </item>
+
+
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/TercihlerPet"
+        android:title="@string/pet">
+    </item>
+
+    <item
+        android:id="@+id/TercihlerPetBilinmiyor"
+        android:title="@string/bilinmiyor">
+    </item>
+
+    <item
+        android:id="@+id/TercihlerNoPet"
+        android:title="@string/no_pet">
+    </item>
+
+</menu>

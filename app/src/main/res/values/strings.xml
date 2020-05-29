@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">LetsGoo</string>
+    <string name="app_name">LetsGo</string>
+    <string name="facebook_application_id" translatable="false">214931233101127</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb214931233101127</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="bilinmiyor">Bilinmiyor</string>
+    <string name="talk">Konuşmayı Severim</string>
+    <string name="no_talk">Sessiz Biriyim</string>
+    <string name="smoke">Sigara içilebilir</string>
+    <string name="no_smoke">Lütfen Sigara İçmeyin</string>
+    <string name="music">Müzik Severim</string>
+    <string name="no_music">Sessizlik İyidir</string>
+    <string name="pet">Evcil Hayvan Olabilir</string>
+    <string name="no_pet">Arabamda Hayvan İstemiyorum</string>
+
+
+    <string name="erkek">Erkek</string>
+    <string name="kadin">Kadın</string>
+
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyADhDAITJT0vSzxNYnq3SzJQ52ByyBfKDM</string>
+
 </resources>
