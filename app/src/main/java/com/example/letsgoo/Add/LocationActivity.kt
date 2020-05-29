@@ -1,4 +1,4 @@
-package com.eskisehir.letsgo.Add
+package com.example.letsgoo.Add
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.eskisehir.letsgo.Admin
+package com.example.letsgoo.Admin
 
 
 import android.content.Intent
