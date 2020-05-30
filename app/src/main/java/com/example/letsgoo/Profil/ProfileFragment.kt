@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.eskisehir.letsgo.Model.Users
+import com.example.letsgoo.Model.Users
 
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.EventbusDataEvents
-import com.eskisehir.letsgo.utils.UniversalImageLoader
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.EventbusDataEvents
+import com.example.letsgoo.utils.UniversalImageLoader
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
