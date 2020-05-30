@@ -13,9 +13,9 @@ import android.provider.Settings
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.eskisehir.letsgo.Model.Ilan
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.EventbusDataEvents
+import com.example.letsgoo.Model.Ilan
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.EventbusDataEvents
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback

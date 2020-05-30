@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.eskisehir.letsgo.Login.FirstActivity
-import com.eskisehir.letsgo.Model.Konusmalar
+import com.example.letsgoo.Login.FirstActivity
+import com.example.letsgoo.Model.Konusmalar
 
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.KonusmalarRecyclerAdapter
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.KonusmalarRecyclerAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_message.view.*

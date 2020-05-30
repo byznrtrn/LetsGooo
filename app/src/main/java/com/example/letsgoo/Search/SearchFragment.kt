@@ -11,10 +11,10 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
-import com.eskisehir.letsgo.Add.LocationActivity
+import com.example.letsgoo.Add.LocationActivity
 
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.EventbusDataEvents
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.EventbusDataEvents
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken

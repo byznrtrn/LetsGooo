@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.eskisehir.letsgo.Model.Mesaj
-import com.eskisehir.letsgo.Model.Users
-import com.eskisehir.letsgo.R
+import com.example.letsgoo.Model.Mesaj
+import com.example.letsgoo.Model.Users
+import com.example.letsgoo.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.tek_satir_mesaj_alan.view.*
 

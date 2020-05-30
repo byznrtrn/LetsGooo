@@ -1,6 +1,6 @@
 package com.example.letsgoo.utils
 
-import com.eskisehir.letsgo.Home.HomeFragment
+import com.example.letsgoo.Home.HomeFragment
 
 class Globals {
 

@@ -3,8 +3,8 @@ package com.example.letsgoo.Profil
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.YolcuPuanlamaAdapter
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.YolcuPuanlamaAdapter
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_yolcu_puanlama.*
 

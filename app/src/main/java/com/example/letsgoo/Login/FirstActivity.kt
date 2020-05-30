@@ -3,8 +3,8 @@ package com.example.letsgoo.Login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.eskisehir.letsgo.Home.MainActivity
-import com.eskisehir.letsgo.R
+import com.example.letsgoo.Home.MainActivity
+import com.example.letsgoo.R
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase

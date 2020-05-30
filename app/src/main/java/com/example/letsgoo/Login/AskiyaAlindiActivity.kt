@@ -4,7 +4,7 @@ package com.example.letsgoo.Login
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.eskisehir.letsgo.R
+import com.example.letsgoo.R
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_askiya_alindi.*

@@ -5,13 +5,13 @@ import android.content.Intent
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.eskisehir.letsgo.Add.AddFragment
-import com.eskisehir.letsgo.Home.HomeFragment
-import com.eskisehir.letsgo.Home.MainActivity
-import com.eskisehir.letsgo.Message.MessageFragment
-import com.eskisehir.letsgo.Profil.ProfileFragment
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.Search.SearchFragment
+import com.example.letsgoo.Add.AddFragment
+import com.example.letsgoo.Home.HomeFragment
+import com.example.letsgoo.Home.MainActivity
+import com.example.letsgoo.Message.MessageFragment
+import com.example.letsgoo.Profil.ProfileFragment
+import com.example.letsgoo.R
+import com.example.letsgoo.Search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
 

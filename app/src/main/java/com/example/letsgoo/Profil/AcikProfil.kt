@@ -3,9 +3,9 @@ package com.example.letsgoo.Profil
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.eskisehir.letsgo.Model.Users
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.UniversalImageLoader
+import com.example.letsgoo.Model.Users
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.UniversalImageLoader
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_acik_profil.*
 import java.util.*

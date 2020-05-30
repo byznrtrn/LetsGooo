@@ -10,11 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.core.content.ContextCompat
-import com.eskisehir.letsgo.Model.Users
+import com.example.letsgoo.Model.Users
 
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.EventbusDataEvents
-import com.eskisehir.letsgo.utils.UniversalImageLoader
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.EventbusDataEvents
+import com.example.letsgoo.utils.UniversalImageLoader
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*

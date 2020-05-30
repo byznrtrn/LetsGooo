@@ -11,10 +11,10 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.eskisehir.letsgo.Model.Ilan
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.Search.IlanDetayActivity
-import com.eskisehir.letsgo.Search.SearchResultFragment
+import com.example.letsgoo.Model.Ilan
+import com.example.letsgoo.R
+import com.example.letsgoo.Search.IlanDetayActivity
+import com.example.letsgoo.Search.SearchResultFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView

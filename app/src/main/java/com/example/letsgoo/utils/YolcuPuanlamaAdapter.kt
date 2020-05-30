@@ -16,9 +16,9 @@ import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.eskisehir.letsgo.Model.Ilan
-import com.eskisehir.letsgo.Profil.YolcuPuanlamaActivity
-import com.eskisehir.letsgo.R
+import com.example.letsgoo.Model.Ilan
+import com.example.letsgoo.Profil.YolcuPuanlamaActivity
+import com.example.letsgoo.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView

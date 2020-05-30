@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 
-import com.eskisehir.letsgo.R
+import com.example.letsgoo.R
 
 /**
  * bir işlemin devam ettiğini göstermek için burası kullanılır

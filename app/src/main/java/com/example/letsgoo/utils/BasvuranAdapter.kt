@@ -11,13 +11,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.eskisehir.letsgo.Home.BasvuranlarActivity
-import com.eskisehir.letsgo.Message.ChatActivity
-import com.eskisehir.letsgo.Model.Basvuranlar
-import com.eskisehir.letsgo.Model.Users
-import com.eskisehir.letsgo.Profil.AcikProfil
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.Search.IlanDetayActivity
+import com.example.letsgoo.Home.BasvuranlarActivity
+import com.example.letsgoo.Message.ChatActivity
+import com.example.letsgoo.Model.Basvuranlar
+import com.example.letsgoo.Model.Users
+import com.example.letsgoo.Profil.AcikProfil
+import com.example.letsgoo.R
+import com.example.letsgoo.Search.IlanDetayActivity
 import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView
 

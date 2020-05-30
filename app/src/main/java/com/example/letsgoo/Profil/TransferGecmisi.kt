@@ -3,8 +3,8 @@ package com.example.letsgoo.Profil
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.TransferGecmisiAdapter
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.TransferGecmisiAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_transfer_gecmisi.*

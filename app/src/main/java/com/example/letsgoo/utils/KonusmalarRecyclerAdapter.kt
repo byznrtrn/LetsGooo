@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import com.eskisehir.letsgo.Message.ChatActivity
-import com.eskisehir.letsgo.Model.Konusmalar
-import com.eskisehir.letsgo.R
+import com.example.letsgoo.Message.ChatActivity
+import com.example.letsgoo.Model.Konusmalar
+import com.example.letsgoo.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

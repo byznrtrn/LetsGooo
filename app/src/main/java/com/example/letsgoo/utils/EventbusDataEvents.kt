@@ -1,8 +1,8 @@
 package com.example.letsgoo.utils
 
-import com.eskisehir.letsgo.Model.Car
-import com.eskisehir.letsgo.Model.Ilan
-import com.eskisehir.letsgo.Model.Users
+import com.example.letsgoo.Model.Car
+import com.example.letsgoo.Model.Ilan
+import com.example.letsgoo.Model.Users
 
 class EventbusDataEvents {
 

@@ -9,13 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.eskisehir.letsgo.Login.FirstActivity
-import com.eskisehir.letsgo.Model.Ilan
+import com.example.letsgoo.Login.FirstActivity
+import com.example.letsgoo.Model.Ilan
 
-import com.eskisehir.letsgo.R
-import com.eskisehir.letsgo.utils.EventbusDataEvents
-import com.eskisehir.letsgo.utils.Globals
-import com.eskisehir.letsgo.utils.HomeFragmentAdapter
+import com.example.letsgoo.R
+import com.example.letsgoo.utils.EventbusDataEvents
+import com.example.letsgoo.utils.Globals
+import com.example.letsgoo.utils.HomeFragmentAdapter
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
