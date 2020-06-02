@@ -55,7 +55,7 @@ class TransferGecmisiAdapter(context: Context, val ilanlar: ArrayList<String>
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()){
                     ilan = p0.getValue(Ilan::class.java)!!
-                    //ilanın user id si curren user id ye eşit ise ve biz transfer adapterda olduğumuz için sürücüyüz demektir, diğer türlü yolcu
+                    //ilanın user id si current user id ye eşit ise ve biz transfer adapterda olduğumuz için sürücüyüz demektir, diğer türlü yolcu
                     if (ilan.userId!!.split("&")[0].equals(currentUserId)){
                         isMyIlan = true
                         holder.puanVer.text = "Yolcuları puanla"
