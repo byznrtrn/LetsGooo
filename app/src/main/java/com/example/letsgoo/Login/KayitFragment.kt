@@ -119,9 +119,9 @@ class KayitFragment : Fragment() {
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            if (s!!.length > 5){
+            if (s!!.length > 3){
 
-                if (etAdSoyad.text.toString().length > 5  && etKullaniciAdi.text.toString().length > 5){
+                if (etAdSoyad.text.toString().length > 3  && etKullaniciAdi.text.toString().length > 3){
                     btnGiris.isEnabled =true
                     btnGiris.setTextColor(ContextCompat.getColor(activity!!,R.color.beyaz))
                     btnGiris.setBackgroundResource(R.drawable.button_active)
