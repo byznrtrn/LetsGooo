@@ -57,7 +57,8 @@ class AddFragment : Fragment() {    //haritatan seçilecek olan şehir ve şehri
         savedInstanceState: Bundle?
     ): View? {
         rootView = inflater.inflate(R.layout.fragment_add, container, false)
-
+        //inflater.inflate () öğesinin dönüş değeri bir View nesnesine atanıyor ihtiyaca göre
+        // veri ayarlanması yada yüklenmesi gerekiyorsa o veriyi geri döndürür
         mRef = FirebaseDatabase.getInstance().reference
 
         //ilan vermek için araba var mı yok diye kontrol ediliyor
