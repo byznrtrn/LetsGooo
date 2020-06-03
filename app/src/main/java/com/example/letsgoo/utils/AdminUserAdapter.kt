@@ -48,6 +48,9 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
             holder.sil.setImageResource(R.drawable.check)
         }
 
+        ///burada userid sine göre kullanıcılar açık profile yönlendiriliyor
+        //yollamak istediğim userId,hangi değeri yollamam gerektiği:users
+        //position:hangi isme tıklandıysa onu yollucam diğer tarafa
         holder.userPic.setOnClickListener {
             val intent = Intent(context,AcikProfil::class.java)
             intent.putExtra("userId",users[position].user_id)

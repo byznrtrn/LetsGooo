@@ -32,6 +32,8 @@ class YolcuPuanlamaAdapter(context: Context, val users: ArrayList<String>
     lateinit var currentUserId : String
     var isFive = false
 
+    //burda viewholderın default gelen fonksiyonları var :oncreate... ve onbind... gibi
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{
 
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.yolcu_puanlama,parent,false)
@@ -134,7 +136,7 @@ class YolcuPuanlamaAdapter(context: Context, val users: ArrayList<String>
 
                 popDialog.setPositiveButton("Onay", object : DialogInterface.OnClickListener{
                     override fun onClick(p0: DialogInterface?, p1: Int) {
-
+    //burdaki listener metoduna kullanici onaya tikladiktan sonra neler olacagini yaziyoruz
                         if (isFive && rating.progress != 5){
                             mRef.child("users").child(users[position]).child("rozetler").child("guvenilir")
                                     .addListenerForSingleValueEvent(object : ValueEventListener{
@@ -184,7 +186,7 @@ class YolcuPuanlamaAdapter(context: Context, val users: ArrayList<String>
                 })
 
                 popDialog.create()
-                popDialog.show()
+                popDialog.show() //alert diyalogları göstermemiz icin gerekli bunu unutma
 
             }
 
