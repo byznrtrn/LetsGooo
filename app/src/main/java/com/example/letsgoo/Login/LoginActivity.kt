@@ -134,8 +134,9 @@ class LoginActivity : AppCompatActivity() {
             fbLogin()
 
         }
-
-
+//firebase-google-signin işlemi
+//gmail ile oturum açmak için Google Sign-In'i uygulamaya entegre ediyoruz
+        //GoogleSignInOptions nesnesini yapılandırdığımızda, requestIdToken öğesini çağır
         gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -156,6 +157,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+//Google Oturum Açma'yı entegre ettikten sonra, oturum açma activitysi
 
     private fun googleLogin() {
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
@@ -183,7 +185,7 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
-
+    // START auth_with_facebook
     private fun handleFacebookAccessToken(token: AccessToken) {
         Log.d(TAG, "handleFacebookAccessToken:$token")
 
