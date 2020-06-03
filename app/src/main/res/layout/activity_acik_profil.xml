@@ -147,7 +147,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity = "center"
-                            android:text="Eğitimci"/>
+                            android:text="Eğitimci-Öğrenci"/>
 
                     </LinearLayout>
 
@@ -241,7 +241,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity = "center"
-                            android:text="Gezici"/>
+                            android:text="Gezgin"/>
 
                     </LinearLayout>
 
