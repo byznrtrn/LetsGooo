@@ -59,7 +59,7 @@ class AddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         rootView = inflater.inflate(R.layout.fragment_add, container, false)
-
+//fragment_add ile bağla,ana grup olarak container kullan
         mRef = FirebaseDatabase.getInstance().reference
 
         //ilan vermek için araba var mı yok diye kontrol ediliyor
