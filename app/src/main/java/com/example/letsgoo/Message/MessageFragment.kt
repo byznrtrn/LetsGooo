@@ -171,6 +171,12 @@ class MessageFragment : Fragment() {
     private fun setupAuthListener() {
         mAuthListener = object : FirebaseAuth.AuthStateListener {
             override fun onAuthStateChanged(p0: FirebaseAuth) {
+                //Bu method(onAuthStateChanged), kimlik doğrulama durumundaki değişikliklerde UI iş parçacığında çağrılır:
+                //kimlik doğrulama durumundaki değişiklikler
+                //*Dinleyici kaydedildikten hemen sonra
+                //**Bir kullanıcı oturum açtığında
+                //***Geçerli kullanıcının oturumu kapatıldığında***
+                //****Geçerli kullanıcı değiştiğinde
                 var user = FirebaseAuth.getInstance().currentUser
 
                 if (user == null) {
