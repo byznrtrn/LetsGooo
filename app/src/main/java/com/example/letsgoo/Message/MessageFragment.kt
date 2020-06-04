@@ -35,7 +35,7 @@ class MessageFragment : Fragment() {
     companion object {
         var fragmentAcikMi=false
     }
-
+//mesajlarla ilgili içerik oluşturuluyor
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         myFragmentView = inflater.inflate(R.layout.fragment_message, container, false)
