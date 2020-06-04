@@ -100,7 +100,7 @@ class AddFragment : Fragment() {
 
     private fun init() {
 
-        //araba yoksa araba ekleme sayfasına yönlendiren buton click özelliği eklendi
+        //araba yoksa araba ekleme sayfasına yönlendiren buton click özelliği
         imgAddCar.setOnClickListener {
             val intent = Intent(activity!!, AddCar::class.java)
             EventBus.getDefault().postSticky(EventbusDataEvents.arabaBilgileriniGonder(car,"new"))
