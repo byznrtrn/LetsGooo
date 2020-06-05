@@ -82,7 +82,7 @@ class MyInfoFragment : Fragment() {
 
         }
 
-        //araba ekleme de düzenle dersek var olan arabayı düzenler. ekle dersek araba ekler.
+        //araba eklemede düzenle dersek var olan arabayı düzenler. ekle dersek araba ekler.
         mView.profileArabaEkle.setOnClickListener {
 
 
@@ -120,7 +120,7 @@ class MyInfoFragment : Fragment() {
 
         }
 
-        //her kese açık profili görecek aktivitye gider
+        //herkese açık profili görecek aktivitye gider
         mView.profiliniGor.setOnClickListener {
             val intent = Intent(activity!!,AcikProfil::class.java)
             intent.putExtra("userId",mUser.uid)

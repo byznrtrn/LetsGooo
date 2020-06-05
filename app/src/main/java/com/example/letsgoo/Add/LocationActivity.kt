@@ -45,7 +45,7 @@ class LocationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location)
-//supportFragmentManager bir yardımcı sınıf gibi düşün.fragmentlarla çalışmamız iiçin yardımcı bir metot çağırıyor.
+//supportFragmentManager bir yardımcı sınıf gibi düşün.fragmentlarla çalışmamız için yardımcı bir metot çağırıyor.
         mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(OnMapReadyCallback {
             googleMap = it

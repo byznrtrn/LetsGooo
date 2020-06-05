@@ -26,6 +26,7 @@ class FirstActivity : AppCompatActivity() {
         setupAuthListener()
 
         //giriş ya da kayıt durumuna göre ilgili sayfaya yönlendirme yapılıyor
+
         btnGirisYap.setOnClickListener {
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
