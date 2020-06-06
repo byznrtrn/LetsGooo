@@ -75,7 +75,7 @@ class BasvuranlarActivity : AppCompatActivity() {
 
                 })
 
-        //listedeki checkboxlar apater içinde kodlandı
+        //listedeki checkboxlar adapter içinde kodlandı
         //onay kısmında seçilen kullanıcıların statüsleri ödeme yapmalarına olancak verek hale getirilir
         basvuranOnay.setOnClickListener {
 

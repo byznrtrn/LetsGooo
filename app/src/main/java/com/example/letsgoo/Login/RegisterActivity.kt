@@ -107,8 +107,8 @@ class RegisterActivity : AppCompatActivity(), FragmentManager.OnBackStackChanged
                             }else{
                                 loginRoot.visibility = View.GONE
                                 loginContainer.visibility = View.VISIBLE
-                                val transaction = supportFragmentManager.beginTransaction()
-                                transaction.replace(R.id.loginContainer,KayitFragment())
+                                val transaction = supportFragmentManager.beginTransaction() //fragmanla ilgili işlemleri yapmaya başlayacağımızı haber veriyoruz begintransaction ile.
+                                transaction.replace(R.id.loginContainer,KayitFragment()) //nereye eklicez:loginContainer,hangi fragmana eklemek istiyorsun:kayıt fragment
                                 transaction.addToBackStack("EmailGirisYontemiFragmentEklendi")
                                 transaction.commit()
                                 //fragmente bilgileri gönderildi

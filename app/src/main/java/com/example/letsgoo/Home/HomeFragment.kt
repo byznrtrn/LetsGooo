@@ -134,7 +134,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    //ilanlarda başvurular gibi çekilip arrayliste eklendi
+    //ilanlar da başvurular gibi çekilip arrayliste eklendi
     private fun getIlan() {
 
         val userId = FirebaseAuth.getInstance().currentUser!!.uid

@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_first.*
 
 //uygulama ilk açıldığında açılan uyguşlama
 class FirstActivity : AppCompatActivity() {
-
+//lateinit:sonradan tanımlayacağımızı belirtiyoruz...ayrıca başka yerde başlatılana kadar bellekte yer tutmaz
     lateinit var mAuth : FirebaseAuth
     lateinit var mAuthListener:FirebaseAuth.AuthStateListener
 
@@ -26,6 +26,7 @@ class FirstActivity : AppCompatActivity() {
         setupAuthListener()
 
         //giriş ya da kayıt durumuna göre ilgili sayfaya yönlendirme yapılıyor
+
         btnGirisYap.setOnClickListener {
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)

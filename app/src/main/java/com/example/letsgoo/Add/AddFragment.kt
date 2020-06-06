@@ -44,7 +44,9 @@ import kotlin.collections.HashMap
 /**
  * İlan verme sayfası
  */
-class AddFragment : Fragment() {    //haritatan seçilecek olan şehir ve şehrin lokasyon bilgilerini class için her yerden ulaşmak için burda tanımladım
+class AddFragment : Fragment() {
+
+    //haritatan seçilecek olan şehir ve şehrin lokasyon bilgilerini class için her yerden ulaşmak için burda tanımladım
     lateinit var rootView:View
     var city = ""
     var lg = 0.0
@@ -57,35 +59,34 @@ class AddFragment : Fragment() {    //haritatan seçilecek olan şehir ve şehri
         savedInstanceState: Bundle?
     ): View? {
         rootView = inflater.inflate(R.layout.fragment_add, container, false)
-        //inflater.inflate () öğesinin dönüş değeri bir View nesnesine atanıyor ihtiyaca göre
-        // veri ayarlanması yada yüklenmesi gerekiyorsa o veriyi geri döndürür
+
         mRef = FirebaseDatabase.getInstance().reference
 
         //ilan vermek için araba var mı yok diye kontrol ediliyor
         mRef.child("users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("car")
-            .addValueEventListener(object : ValueEventListener{
-                override fun onCancelled(p0: DatabaseError) {
-                    println(p0.message)
-                }
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    if (p0.exists()){
-                        car = p0.getValue(Car::class.java)!!
-
-                        if (car.model.equals("")){
-                            //araba yoksa
-                            noCarLayout.visibility = View.VISIBLE
-                            scrollView2.visibility = View.GONE
-                        }else{
-                            //araba varsa
-                            noCarLayout.visibility = View.GONE
-                            scrollView2.visibility = View.VISIBLE
-                        }
-                        init()
+                .addValueEventListener(object : ValueEventListener{
+                    override fun onCancelled(p0: DatabaseError) {
+                        println(p0.message)
                     }
-                }
 
-            })
+                    override fun onDataChange(p0: DataSnapshot) {
+                        if (p0.exists()){
+                            car = p0.getValue(Car::class.java)!!
+
+                            if (car.model.equals("")){
+                                //araba yoksa
+                                noCarLayout.visibility = View.VISIBLE
+                                scrollView2.visibility = View.GONE
+                            }else{
+                                //araba varsa
+                                noCarLayout.visibility = View.GONE
+                                scrollView2.visibility = View.VISIBLE
+                            }
+                            init()
+                        }
+                    }
+
+                })
 
 
 
@@ -213,29 +214,29 @@ class AddFragment : Fragment() {    //haritatan seçilecek olan şehir ve şehri
 
 
                 mRef.child("ilanlar").child(key).setValue(ilan)
-                    .addOnCompleteListener { p0 ->
-                        if (p0.isSuccessful){
-                            println("başarılı")
-                            Toast.makeText(activity,"İlan Oluşturuldu",Toast.LENGTH_SHORT).show()
-                            rootView.addNerden.setText("")
-                            rootView.addNereye.setText("")
-                            rootView.addDate.setText("")
-                            rootView.addTime.setText("")
-                            rootView.addCapasity.setText("")
-                            rootView.addPrice.setText("")
+                        .addOnCompleteListener { p0 ->
+                            if (p0.isSuccessful){
+                                println("başarılı")
+                                Toast.makeText(activity,"İlan Oluşturuldu",Toast.LENGTH_SHORT).show()
+                                rootView.addNerden.setText("")
+                                rootView.addNereye.setText("")
+                                rootView.addDate.setText("")
+                                rootView.addTime.setText("")
+                                rootView.addCapasity.setText("")
+                                rootView.addPrice.setText("")
 
-                            val imm : InputMethodManager = activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                            imm.hideSoftInputFromWindow(activity!!.currentFocus.windowToken,InputMethodManager.HIDE_NOT_ALWAYS)
+                                val imm : InputMethodManager = activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                                imm.hideSoftInputFromWindow(activity!!.currentFocus.windowToken,InputMethodManager.HIDE_NOT_ALWAYS)
 
 
-                            var menu = activity!!.bottomNavigationView.menu
-                            menu.performIdentifierAction(R.id.ic_home,0)
+                                var menu = activity!!.bottomNavigationView.menu
+                                menu.performIdentifierAction(R.id.ic_home,0)
 
-                        }else{
-                            println("başarısız++++++++++++++")
-                            Toast.makeText(activity,"Bir hatadan dolayı ilan verilemedi. Lütfen tekrar deneyiniz",Toast.LENGTH_LONG).show()
+                            }else{
+                                println("başarısız++++++++++++++")
+                                Toast.makeText(activity,"Bir hatadan dolayı ilan verilemedi. Lütfen tekrar deneyiniz",Toast.LENGTH_LONG).show()
+                            }
                         }
-                    }
 
             }
 
@@ -251,29 +252,29 @@ class AddFragment : Fragment() {    //haritatan seçilecek olan şehir ve şehri
     //harita için izin alırken dexter kütüphanesi kullanıldı
     private fun permissionCheck() {
         Dexter.withActivity(activity)
-            .withPermissions(android.Manifest.permission.ACCESS_COARSE_LOCATION,
-                android.Manifest.permission.ACCESS_FINE_LOCATION)
-            .withListener(object : MultiplePermissionsListener {
-                override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {
-                    if (p0!!.areAllPermissionsGranted()){
-                        val intent = Intent(activity!!,LocationActivity::class.java)
-                        startActivity(intent)
+                .withPermissions(android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                        android.Manifest.permission.ACCESS_FINE_LOCATION)
+                .withListener(object : MultiplePermissionsListener {
+                    override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {
+                        if (p0!!.areAllPermissionsGranted()){
+                            val intent = Intent(activity!!,LocationActivity::class.java)
+                            startActivity(intent)
+                        }
                     }
-                }
 
-                override fun onPermissionRationaleShouldBeShown(
-                    p0: MutableList<PermissionRequest>?,
-                    p1: PermissionToken?
-                ) {
-                    println("Bir izin verilmedi")
-                }
+                    override fun onPermissionRationaleShouldBeShown(
+                            p0: MutableList<PermissionRequest>?,
+                            p1: PermissionToken?
+                    ) {
+                        println("Bir izin verilmedi")
+                    }
 
-            }).check()
+                }).check()
 
     }
 
-    //event bus ile harita tarafından gönderilen
-    // lokasyon bilgileri yakalandı
+
+    //event bus ile harita tarafından gönderilen lokasyon bilgileri yakalandı
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     internal fun onMyLocation(lokasyonBilgileri: EventbusDataEvents.lokasyonBilgileriniGonder){
 
@@ -294,8 +295,5 @@ class AddFragment : Fragment() {    //haritatan seçilecek olan şehir ve şehri
         super.onStop()
         EventBus.getDefault().unregister(this)
     }
-
-
-
 
 }
