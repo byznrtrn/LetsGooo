@@ -274,7 +274,12 @@ class IlanDuzenleActivity : AppCompatActivity() {
 
     }
 
-
+    /*
+    Kanala sticky bir event gönderdiğinizde, bu event önbellekte saklanır.
+    Yeni bir Activity veya Fragment o event kanalına abone olduğunda,
+    yeni bir event’in yayınlanmasını beklemeden en son yayınlanan ve önbellekte saklanan yapışkan event’i direkt olarak alır.
+    Bu event herhangi bir abone onu kanaldan alsa bile önbellekte saklanmaya devam eder.
+    */
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     internal fun onMyLocation(lokasyonBilgileri: EventbusDataEvents.lokasyonBilgileriniGonder){
 
@@ -294,7 +299,10 @@ class IlanDuzenleActivity : AppCompatActivity() {
         gelenIlan = ilanBilgileri.ilan!!
 
         setupIlanBilgileri()
-
+/*
+* Gerçekleştirmek istediğimiz olayı artık yakalayıp kullanmak istiyorsak da
+* Fragment yada Activity sınıfımızda subscribe ederek fonksiyonu yazıyoruz
+* */
 
 
     }
@@ -304,11 +312,21 @@ class IlanDuzenleActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
+        /*
+        * bir olayı yakalamak istiyorsak da o olayı yakalamak
+        * istediğimizi  ilgili sınıfa haber veriyoruz bu işlemede register işlemi deniyor
+        * */
     }
 
     override fun onStop() {
         super.onStop()
         EventBus.getDefault().unregister(this)
+
+        /*
+        * İlgili olayı artık dinlemek istemiyorsak veya onunla ilgili işlemimiz
+        * bittiyse artık haberdar olmak istemediğimizi söylüyoruz
+        * bu işlemi de unregister ile yapıyoruz
+        * */
     }
 
 }
