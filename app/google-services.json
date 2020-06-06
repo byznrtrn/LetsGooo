@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1070572368762:android:a804717b67a8d601a09cc3",
         "android_client_info": {
-          "package_name": "com.example.letsgoo"
+          "package_name": "com.eskisehir.letsgo"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "1070572368762-t9p8ashrlcot52raifpbcpaq4qbnf49p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.letsgoo",
+            "package_name": "com.eskisehir.letsgo",
             "certificate_hash": "a4cc1e726290d38f241fe5d56ca484684195e0b0"
           }
         },
@@ -26,7 +26,7 @@
           "client_id": "1070572368762-u3athum3bm8471mjccfp01b1q6ce1qnh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.letsgoo",
+            "package_name": "com.eskisehir.letsgo",
             "certificate_hash": "5ba50321d0b80e704b85e0442c864d13b51fcc79"
           }
         },
@@ -34,7 +34,7 @@
           "client_id": "1070572368762-0m8ef53d6mnohuenafah0q44a1pg145b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.letsgoo",
+            "package_name": "com.eskisehir.letsgo",
             "certificate_hash": "49bda3defd818c10fc0c6e44e1e2b5f74c12313c"
           }
         },

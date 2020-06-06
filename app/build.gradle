@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.letsgoo"
+        applicationId "com.eskisehir.letsgo"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
