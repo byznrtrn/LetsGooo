@@ -50,8 +50,10 @@ class AdminActivity : AppCompatActivity() {
                         userList.add(user.getValue(Users::class.java)!!)
                     }
 
+
                     //recyclerView tanımlanıyor
                     rvUsers.layoutManager = LinearLayoutManager(this@AdminActivity)
+
                     //LinearLayoutManager = rv'de yaptığımız rowların nasıl dizileceğini gösteriyor:alt alta diziyor
                     val adapter = AdminUserAdapter(this@AdminActivity,userList)
                     rvUsers.adapter = adapter

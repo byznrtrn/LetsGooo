@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.tvAski
 
 
+
 //main aktivity bizim tüm fragmentlerimizi barından kısım.
 class MainActivity : AppCompatActivity() {
 

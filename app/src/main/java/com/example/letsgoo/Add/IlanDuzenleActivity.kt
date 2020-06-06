@@ -47,6 +47,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
     }
 
 
+
     //gelen ilan verilerini uygun şekilde bölümlere dolduruyoruz
     private fun setupIlanBilgileri() {
 
@@ -91,6 +92,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
             if (!(bos_alan == 0)){
                 Toast.makeText(this,"Lütfen tüm alanları doldurduğunuza emin olun!", Toast.LENGTH_LONG).show()
             }else{
+
 
 
                 //güncelleme yapılacağı için tüm kısımlar tekrar elde edilip aynı id ile veritabanına eklenecek
@@ -200,6 +202,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
         addNereye.setOnClickListener {
            nereyeLayout.performClick()
         }
+
 
 
         //ilanı silmek için kişiden onay isteyen builder gösterilecek

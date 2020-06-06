@@ -36,6 +36,7 @@ import kotlinx.android.synthetic.main.activity_login.google_button
 import kotlinx.android.synthetic.main.activity_register.*
 
 
+
 //daha önce kaydolmuş birinin google facebookve email ile giriş yapacağı kısım
 //facebook ve google girişleri register activityde olanlar aynı kodlar
 class LoginActivity : AppCompatActivity() {
@@ -134,6 +135,8 @@ class LoginActivity : AppCompatActivity() {
             fbLogin()
 
         }
+
+
 //firebase-google-signin işlemi
 //gmail ile oturum açmak için Google Sign-In'i uygulamaya entegre ediyoruz
         //GoogleSignInOptions nesnesini yapılandırdığımızda, requestIdToken öğesini çağır
@@ -157,6 +160,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+
 //Google Oturum Açma'yı entegre ettikten sonra, oturum açma activitysi
 
     private fun googleLogin() {
@@ -185,6 +189,7 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
     // START auth_with_facebook
     private fun handleFacebookAccessToken(token: AccessToken) {
         Log.d(TAG, "handleFacebookAccessToken:$token")
@@ -240,6 +245,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                 } else {
+
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",

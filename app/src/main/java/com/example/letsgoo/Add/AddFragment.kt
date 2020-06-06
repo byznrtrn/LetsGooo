@@ -46,6 +46,7 @@ import kotlin.collections.HashMap
  */
 class AddFragment : Fragment() {
 
+
     //haritatan seçilecek olan şehir ve şehrin lokasyon bilgilerini class için her yerden ulaşmak için burda tanımladım
     lateinit var rootView:View
     var city = ""
@@ -61,6 +62,7 @@ class AddFragment : Fragment() {
         rootView = inflater.inflate(R.layout.fragment_add, container, false)
 
         mRef = FirebaseDatabase.getInstance().reference
+
 
         //ilan vermek için araba var mı yok diye kontrol ediliyor
         mRef.child("users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("car")

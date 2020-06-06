@@ -90,6 +90,7 @@ class RegisterActivity : AppCompatActivity(), FragmentManager.OnBackStackChanged
 
 
 
+
         //email ike kayıt yapılacaksa girilen bilgilerden sonra kayıt fragmentine gönderilir
         btnIleri.setOnClickListener {
             if(isValidEmail(etGirisYontemi.text.toString())){
