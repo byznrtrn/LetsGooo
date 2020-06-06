@@ -275,9 +275,10 @@ class AddFragment : Fragment() {
 
 
     //event bus ile harita tarafından gönderilen lokasyon bilgileri yakalandı
+    //subscribe metodu harita tarafından gönderilen bilgilerle tetiklenir
+
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     internal fun onMyLocation(lokasyonBilgileri: EventbusDataEvents.lokasyonBilgileriniGonder){
-
         city = lokasyonBilgileri.City!!
         lt = lokasyonBilgileri.lt!!
         lg = lokasyonBilgileri.lg!!
@@ -289,11 +290,14 @@ class AddFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
+        //activite başladığında register olmamız gerekiyor
     }
 
     override fun onStop() {
         super.onStop()
         EventBus.getDefault().unregister(this)
+        //ve bittiğinde unregister
+
     }
 
 }
