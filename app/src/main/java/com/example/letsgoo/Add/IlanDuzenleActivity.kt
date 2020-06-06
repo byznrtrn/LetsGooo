@@ -120,7 +120,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
                 gelenIlan.lt = lt
 
 
-
+            //updateChilden metodunnu sadece burada kullandık.When calling updateChildren(), you can update lower-level child values by specifying a path for the key.
                 mRef.child("ilanlar").child(gelenIlan.ilanId!!).updateChildren(ilan).addOnCompleteListener {
                     p0->
                     if (p0.isSuccessful){
@@ -220,7 +220,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
                     override fun onDataChange(p0: DataSnapshot) {
                         if (p0.exists()){
                             for (users in p0.children){
-                                mRef.child("basvurular").child(users.key!!).child(gelenIlan.ilanId!!).removeValue()
+                                mRef.child("basvurular").child(users.key!!).child(gelenIlan.ilanId!!).removeValue() //belirtilen referanstaki datayı silmek için removeValue()
                             }
                             mRef.child("ilanlar").child(gelenIlan.ilanId!!).removeValue().addOnCompleteListener {
                                 Toast.makeText(this@IlanDuzenleActivity,"İlan Silindi",Toast.LENGTH_LONG).show()

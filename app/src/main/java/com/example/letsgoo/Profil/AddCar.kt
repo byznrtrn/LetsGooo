@@ -280,7 +280,7 @@ class AddCar : AppCompatActivity() {
         }
     }
 
-    //araba düzenleme veyya neyi araba durumuna göre ilgili kısımlar gelen bilgilere göre doldurulur
+    //araba düzenleme veya neyi araba durumuna göre ilgili kısımlar gelen bilgilere göre doldurulur
     private fun setupKullaniciBilgileri() {
 
         if (!mode.equals("new")){
@@ -301,11 +301,10 @@ class AddCar : AppCompatActivity() {
 
 
 
-    //araba bilgileri burada yakalanır ve düzenleme ise ilgili yerlere burası sayesinde aktarılır
+    //gelen araba bilgileri burada yakalanır ve düzenleme ise ilgili yerlere burası sayesinde aktarılır
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     internal fun onArabaBilgileri(arabaBilgileri: EventbusDataEvents.arabaBilgileriniGonder){
-
         gelenArabaBilgileri = arabaBilgileri.car!!
         mode = arabaBilgileri.mode!!
 

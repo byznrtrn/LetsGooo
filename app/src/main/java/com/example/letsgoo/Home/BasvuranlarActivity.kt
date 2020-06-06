@@ -42,7 +42,7 @@ class BasvuranlarActivity : AppCompatActivity() {
 
         //gelen ilanın id bilgisine göre başvuranlar veritabanından çekilir
         mRef.child("ilanlar").child(ilanId).child("basvuranlar")
-                .addValueEventListener(object : ValueEventListener{
+                .addValueEventListener(object : ValueEventListener{  //To read data at a path and listen for changes, use the addValueEventListener()
                     override fun onCancelled(p0: DatabaseError) {
                         TODO("Not yet implemented")
                     }

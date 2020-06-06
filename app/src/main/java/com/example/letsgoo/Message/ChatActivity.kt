@@ -383,8 +383,8 @@ class ChatActivity : AppCompatActivity() {
                     .addOnCompleteListener {
                         FirebaseDatabase.getInstance().getReference().child("konusmalar")
                                 .child(mesajGonderenUserId).child(sohbetEdilecekUserId).child("goruldu").setValue(true)
-                    }
-        }
+                    }//write to database
+        }           //you can use setValue() to save data to a specified reference
 
 
     }

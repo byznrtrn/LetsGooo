@@ -63,13 +63,18 @@ class AddFragment : Fragment() {
         mRef = FirebaseDatabase.getInstance().reference
 
         //ilan vermek için araba var mı yok diye kontrol ediliyor
+        //valueEventListener : dataları realtime'da update etmemizi sağlar
         mRef.child("users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("car")
                 .addValueEventListener(object : ValueEventListener{
                     override fun onCancelled(p0: DatabaseError) {
+                        // Failed to read value
                         println(p0.message)
                     }
 
+                     //Read from database
                     override fun onDataChange(p0: DataSnapshot) {
+                        // This method is called once with the initial value and again
+                        // whenever data at this location is updated
                         if (p0.exists()){
                             car = p0.getValue(Car::class.java)!!
 

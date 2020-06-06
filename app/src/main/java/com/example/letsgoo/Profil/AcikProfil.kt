@@ -29,12 +29,12 @@ class AcikProfil : AppCompatActivity() {
 
         //kişi bilgileri gelen id ye göre çekilir
 
-        mRef.child("users").child(userId).addListenerForSingleValueEvent(object : ValueEventListener{
+        mRef.child("users").child(userId).addListenerForSingleValueEvent(object : ValueEventListener{ //use addListenerForSingleValueEvent() method to add a ValueEventListener to a DatabaseReference
             override fun onCancelled(p0: DatabaseError) {
                 println(p0.message)
             }
 
-            override fun onDataChange(p0: DataSnapshot) {
+            override fun onDataChange(p0: DataSnapshot) {//onDataChange metodu database'te her değişiklik olduğunda çağırılır.
                 if (p0.exists()){
                     okunanKullaniciBilgileri = p0.getValue(Users::class.java)!!
                     //çekilen bilgilere göre aşağıdaki bilgiler yerleştirilir
