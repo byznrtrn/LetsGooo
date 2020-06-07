@@ -1,6 +1,7 @@
 package com.eskisehir.letsgo.Model
 
 class Car {
+    //arabanın özellikleri oluşturuldu
 
     var marka : String? = null
     var model : String? = null
@@ -20,6 +21,7 @@ class Car {
         this.plaka = plaka
         this.kapasite = kapasite
         this.pic = pic
+        //en son gelen değerlerini aldık
 
     }
 }
