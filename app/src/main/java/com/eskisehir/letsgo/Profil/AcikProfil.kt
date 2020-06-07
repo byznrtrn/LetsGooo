@@ -34,7 +34,8 @@ class AcikProfil : AppCompatActivity() {
                 println(p0.message)
             }
 
-            override fun onDataChange(p0: DataSnapshot) {//onDataChange metodu database'te her değişiklik olduğunda çağırılır.
+            override fun onDataChange(p0: DataSnapshot) {
+                //onDataChange metodu database'te her değişiklik olduğunda çağırılır.
                 if (p0.exists()){
                     okunanKullaniciBilgileri = p0.getValue(Users::class.java)!!
                     //çekilen bilgilere göre aşağıdaki bilgiler yerleştirilir
