@@ -46,8 +46,9 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
         var user : Users? = null
 
 
-        //user id ye göre başvuran bilgileir çekilir
+        //user id ye göre başvuran bilgileri çekilir
         mRef.child("users").child(basvuranlar[position].userId).addValueEventListener(object : ValueEventListener{
+
             override fun onCancelled(p0: DatabaseError) {
                 TODO("Not yet implemented")
             }
@@ -55,6 +56,7 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()){
                     user = p0.getValue(Users::class.java)
+                    //profil fotoğrafları için kullandığımız kütüphane:UniversalImageLoader
                     UniversalImageLoader.setImage(user!!.profile_picture!!,holder.userPic,null,"")
                     holder.adSoyad.text = user!!.adi_soyadi
                 }
@@ -62,6 +64,7 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
 
         })
 
+            //bence burayı debug etmeliyiz
         if (!(basvuranlar[position].onay == 0)){
             holder.check.isChecked = true
             kapasaite--
@@ -88,7 +91,7 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
             Toast.makeText(context,"Yakında mesaj gönderilecek",Toast.LENGTH_LONG).show()
         }
 
-
+        //sürücü yolcuyu onayladığında buton üstündeki yazıda boş koltuk sayısı güncellenir
         (context as BasvuranlarActivity).basvuranOnay.text = "Onayla - "+kapasaite+" boş koltuk kaldı"
 
         //bi kişiyi kabul etme onaylama kısmı sürücüler için
@@ -100,7 +103,7 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
                 if (basvuranlar[position].onay == 3){
                     Toast.makeText(context,"Ödeme yapmış birini çıkaramazsınız. Lütfen yolcu ile iletişime geçiniz",Toast.LENGTH_LONG).show()
                     holder.check.isChecked =true
-                }else{ //ödeme yapmamışsa statüsü 0 a çevirilir ve hiç kabul edilmemeş gibi olur
+                }else{ //ödeme yapmamışsa statüsü 0 a çevirilir ve hiç kabul edilmemiş gibi olur
                     mRef.child("ilanlar").child(ilanId).child("basvuranlar").child(basvuranlar[position].userId).child("statüs").setValue(0)
                             .addOnCompleteListener { p0->
                                 if (p0.isSuccessful){
