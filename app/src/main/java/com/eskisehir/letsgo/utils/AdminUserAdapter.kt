@@ -91,8 +91,8 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
-
+//RecylerView'in çalışması--> Adapter verileri işler,düzenler ve LayoutManager yardımıyla ekrana basar
+//kullanıcı isimleri ve resimleri ekrana basılır
 
 
         val adSoyad: TextView = itemView.findViewById(R.id.basvuranAd)
