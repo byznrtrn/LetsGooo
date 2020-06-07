@@ -68,6 +68,7 @@ class MessageFragment : Fragment() {
             mRef.orderByChild("time").addChildEventListener(myListener)
 
             object : CountDownTimer(1000,1000){
+                // override object functions here
                 override fun onFinish() {
                     myFragmentView.progressBar6.visibility=View.GONE
                     myFragmentView.recyclerKonusmalar.visibility=View.VISIBLE
