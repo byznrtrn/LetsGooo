@@ -36,8 +36,10 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //findViewById yi kullanmadan önce onCreateView () içinde rootView'i inflate etmek zorundasın
+        //rootviewi inflate et
         rootView =  inflater.inflate(R.layout.fragment_profile, container, false)
-
+    //use findViewById...
         firstViewPager = rootView.findViewById(R.id.profileViewPager) as ViewPager
         tabLayout = rootView.findViewById(R.id.profileTabLayout) as TabLayout
         tabLayout!!.setupWithViewPager(firstViewPager)
