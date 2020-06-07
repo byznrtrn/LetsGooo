@@ -64,6 +64,7 @@ class ChatActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
 
         setupAuthListener()
+        //firebase databese referansı mRef tanımlandı
         mAuth = FirebaseAuth.getInstance()
         mRef=FirebaseDatabase.getInstance().reference
 
@@ -83,8 +84,10 @@ class ChatActivity : AppCompatActivity() {
 
         sohbetEdenlerinBilgileriniGetir(sohbetEdilecekUserId, mesajGonderenUserId)
 
+       // Geri aramadaki Yenileme işlemi için OnRefreshListener öğesini RecyclerRefreshListener olarak ayarladık .
         refreshLayout.setOnRefreshListener(object : RecyclerRefreshLayout.OnRefreshListener{
             override fun onRefresh() {
+//refresh metodu çağırılır
 
 
                 mRef.child("mesajlar").child(mesajGonderenUserId).child(sohbetEdilecekUserId).addListenerForSingleValueEvent(object : ValueEventListener{
@@ -93,7 +96,7 @@ class ChatActivity : AppCompatActivity() {
                     }
 
                     override fun onDataChange(p0: DataSnapshot) {
-
+                  //mesajları getir
 
                         if(p0!!.childrenCount.toInt() != tumMesajlar.size){
                             dahaFazlaMesajPos=0
@@ -101,7 +104,9 @@ class ChatActivity : AppCompatActivity() {
 
                             dahaFazlaMesajGetir()
                         }else{
-
+//refleshLayout -->pull-to-refresh library
+//mesajlar geldikten sonra refresh duracak
+                            //sürekli refresh etmemesi için false değerini ayarladık
                             refreshLayout.setRefreshing(false)
                             refreshLayout.setEnabled(false)
                         }
@@ -177,7 +182,7 @@ class ChatActivity : AppCompatActivity() {
 
 
         }
-
+//call back uygulanması kullanımında object gerekli
         etMesaj.addTextChangedListener(object : TextWatcher {
 
             var typing=false
@@ -428,6 +433,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun setupMesajlarRecyclerView() {
+        //androidx.recyclerview.widget.LinearLayoutManager->layoutmanagerı ayarla
         var myLinearLayoutManager= androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL, false)
         myLinearLayoutManager.stackFromEnd=true
         myRecyclerView=rvSohbet
@@ -443,6 +449,8 @@ class ChatActivity : AppCompatActivity() {
     private fun sohbetEdenlerinBilgileriniGetir(sohbetEdilecekUserId: String?, oturumAcanUserID:String?) {
 
         if (sohbetEdilecekUserId != null) {
+            //AddListenerForSingleValueEvent () öğesini çağırdığında,
+            // referans alınan verileri Firebase sunucularından yüklemeye başlar
             mRef.child("users").child(sohbetEdilecekUserId).addListenerForSingleValueEvent(object : ValueEventListener{
                 override fun onCancelled(p0: DatabaseError) {
 
@@ -488,8 +496,10 @@ class ChatActivity : AppCompatActivity() {
     private fun setupAuthListener() {
         mAuthListener = object : FirebaseAuth.AuthStateListener {
             override fun onAuthStateChanged(p0: FirebaseAuth) {
+                //geçerli kullanıcıyı almak için getCurrentUser metodu çağırılır
                 var user = FirebaseAuth.getInstance().currentUser
 
+                //  Oturum açmış kullanıcı yoksa getCurrentUser null değerini döndürür
                 if (user == null) {
                     //Log.e("HATA", "Kullanıcı oturum açmamış, HomeActivitydesn")
                     var intent = Intent(this@ChatActivity, FirstActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
