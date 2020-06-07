@@ -1,6 +1,7 @@
 package com.eskisehir.letsgo.Model
 
 class Users {
+    //kullanıcının kişisel bilgileri oluşturuldu
     var email: String? = null
     var username: String? = null
     var adi_soyadi: String? = null
