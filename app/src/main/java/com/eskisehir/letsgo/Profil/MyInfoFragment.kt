@@ -66,6 +66,9 @@ class MyInfoFragment : Fragment() {
 
                             val intent = Intent(activity!!,KisiselBilgiler::class.java)
                             EventBus.getDefault().postSticky(EventbusDataEvents.KullaniciBilgileriniGonder(okunanKullaniciBilgileri))
+                           //değişiklik olmadan da mevcut profili görebilmek için EventBus,
+                            // en son var olan sticky eventi(profilin son halini) hafızada tutar
+                            //bunun için de postSticky metodu  kullanılır
                             startActivity(intent)
                             return true
 
