@@ -22,36 +22,50 @@ class AccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //AttachToRoot false olduğunda, ilk parametreden layout dosyası şişirilir ve
+        // Görünüm olarak döndürülür. Döndürülen Görünümün kökü, düzen dosyasında belirtilen kök olacaktır.
         val view = inflater.inflate(R.layout.fragment_accunt, container, false)
 
 
         view.accVerdigimPuanlar.setOnClickListener {
+            //verdiğim puanlara tıklandığında
+           //  SetOnClickListener bloğunun içindeki kod yürütülür.
             val intent = Intent(activity!!,VerilenPuanlar::class.java)
             startActivity(intent)
         }
 
         view.accSifreDegis.setOnClickListener {
+            //şifredeğiştire tıklandığında
+            //  SetOnClickListener bloğunun içindeki kod yürütülür.
             val intent = Intent(activity!!,SifreDegistir::class.java)
             startActivity(intent)
         }
 
         view.accBakiye.setOnClickListener {
+            //bakiyeye tıklandığında
+            //  SetOnClickListener bloğunun içindeki kod yürütülür.
             val intent = Intent(activity!!,BirikenBakiye::class.java)
             startActivity(intent)
         }
 
         view.accRezervasyonGecmisi.setOnClickListener {
+            //rezervasyon geçmişine  tıklandığında
+            //  SetOnClickListener bloğunun içindeki kod yürütülür.
             val intent = Intent(activity!!,RezervasyonGecmisi::class.java)
             startActivity(intent)
         }
 
         view.accTransferGecmisi.setOnClickListener {
+            //transfer geçmişine tıklandığında
+            //  SetOnClickListener bloğunun içindeki kod yürütülür.
             val intent = Intent(activity!!,TransferGecmisi::class.java)
             startActivity(intent)
         }
 
 
         view.accCikisYap.setOnClickListener {
+            //cıkışyapa tıklanınca çıkış işlemi yapılır
+           // FirebaseAuth.getInstance().signOut()-->Firebase yetkilendirme, çıkış yöntemidir.
             FirebaseAuth.getInstance().signOut()
 
             AuthUI.getInstance().signOut(activity!!)
