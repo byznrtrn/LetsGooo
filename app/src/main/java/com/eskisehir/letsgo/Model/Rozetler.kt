@@ -2,7 +2,7 @@ package com.eskisehir.letsgo.Model
 
 class Rozetler {
 
-
+//rozetleri oluşturduk
     var egitim : Int = 0
     var guvenilir : Int = 0
     var gezici : Int = 0
