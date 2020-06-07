@@ -43,7 +43,7 @@ class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myC
 
 
     class MyViewHolder(itemView: View?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView!!) {
-
+//mesaj bilgileri-okunma-zaman-sonmesj-kullanıcıismi-profilresmi işlemleri
         var tumLayout=itemView as ConstraintLayout
 
         var enSonAtilanMesaj=tumLayout.tvSonMesaj
