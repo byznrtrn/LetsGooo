@@ -37,7 +37,7 @@ class HomeFragmentAdapter(context: Context, val ilanlar: ArrayList<Ilan>
     override fun onBindViewHolder(holder: ViewHolder , position: Int) {
 
 
-
+//ilanlar gösterilirken kullanıcı ismi ve profil resmi ile gösteriliyor
          mRef.child("users").child(ilanlar[position].userId!!.split("&")[0]).child("profile_picture")
                 .addListenerForSingleValueEvent(object : ValueEventListener{
                     override fun onCancelled(p0: DatabaseError) {
