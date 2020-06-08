@@ -26,12 +26,12 @@ class MesajRecyclerViewAdapter(var tumMesajlar:ArrayList<Mesaj>, var myContext: 
         //bu türe göre mesaj sahibi ya da karşı taraf diye view döndürülür
         if(viewType==1){
             //tek_satir_mesaj_gonderen xml'i ile bağlıcaz
-            myView= LayoutInflater.from(myContext).inflate(R.layout.tek_satir_mesaj_gonderen,parent,false)
+            myView= LayoutInflater.from(myContext).inflate(R.layout.tek_satir_mesaj_gonderen,parent,false)//mesaj gönderen
             return MyMesajViewHolder(myView, null)
-            //Layoutinflater yapısı bir xml oluşturduğumuzda onu koda bağlamak için oluşturduğumuz yapıdır
+            //Layoutinflater yapısı bir xml oluşturduğumuzda onu koda bağlamak için kullandığımız yapıdır
 
         }else  {
-            myView= LayoutInflater.from(myContext).inflate(R.layout.tek_satir_mesaj_alan,parent,false)
+            myView= LayoutInflater.from(myContext).inflate(R.layout.tek_satir_mesaj_alan,parent,false)//mesaj alan
             return MyMesajViewHolder(myView, sohbetEdilecekUser!!)
         }
 
@@ -69,7 +69,6 @@ class MesajRecyclerViewAdapter(var tumMesajlar:ArrayList<Mesaj>, var myContext: 
             if(sohbetEdilecekUser!=null){
                 UniversalImageLoader.setImage(sohbetEdilecekUser!!.profile_picture!!,profilePicture,null,"")
             }
-
             mesajText.text=oankiMesaj.mesaj
         }
 

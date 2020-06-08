@@ -3,7 +3,7 @@ package com.eskisehir.letsgo.utils;
 public class TimeAgo {
 
 
-    //klasik bir zaman hesaplayan algoritma. Unix değerine göre geçmişe yönelik hesaplamalar yapılıyor. Kodlar incelenerek anlaşılır
+    //klasik bir zaman hesaplayan algoritma. Unix değerine göre geçmişe yönelik hesaplamalar yapılıyor
 
     private static final int SECOND_MILLIS = 1000;
     private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
