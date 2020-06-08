@@ -55,7 +55,7 @@ class HomeFragmentAdapter(context: Context, val ilanlar: ArrayList<Ilan>
                 })
 
 
-
+        //parent:ilanView
         holder.parent.setOnClickListener {
 
             val intent = Intent(context,IlanDetayActivity::class.java)

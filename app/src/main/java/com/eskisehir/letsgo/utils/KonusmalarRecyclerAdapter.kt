@@ -43,7 +43,7 @@ class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myC
 
 
     class MyViewHolder(itemView: View?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView!!) {
-//mesaj bilgileri-okunma-zaman-sonmesj-kullanıcıismi-profilresmi işlemleri
+//mesaj bilgileri-okunma-zaman-sonmesaj-kullanıcıismi-profilresmi işlemleri
         var tumLayout=itemView as ConstraintLayout
 
         var enSonAtilanMesaj=tumLayout.tvSonMesaj
@@ -51,6 +51,7 @@ class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myC
         var sohbetEdilenUserName=tumLayout.tvUserName
         var sohbetEdilenUserPic=tumLayout.imgUserProfilePicture
         var okunduBilgisi=tumLayout.imgOkunmaBilgisi
+        //eğer mesaj okunmamışsa sağ tarafta mesaj simgesi çıkacak
 
 
 
@@ -76,7 +77,7 @@ class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myC
             mesajZaman.text=TimeAgo.getTimeAgoForComments(oankiKonusma.time!!.toLong())
 
             if(oankiKonusma.goruldu==false){
-
+    //mesaj okunmamışsa mesajlaşılan kullanıcı adı ve mesaj koyu renkte yazılır
                 okunduBilgisi.visibility= View.VISIBLE
                 sohbetEdilenUserName.setTypeface(null, Typeface.BOLD)
                 enSonAtilanMesaj.setTypeface(null, Typeface.BOLD)
