@@ -53,18 +53,19 @@ class KisiselBilgiler : AppCompatActivity() {
         editCinsiyet.setOnClickListener {
 
             val popup : PopupMenu = PopupMenu(this,editCinsiyet)
-            popup.inflate(R.menu.gender_menu)
+            popup.inflate(R.menu.gender_menu) //pop up'ı gender_menu layoutuna bağladık
             val et = editCinsiyet
 
             popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener{
                 override fun onMenuItemClick(item: MenuItem?): Boolean {
+                    //gender_menu deki seçimlerimize göre edittexler güncellenir
                     when(item!!.itemId){
                         R.id.genderErkek ->{
                             et.setText(R.string.erkek)
                             return true
                         }
 
-                        R.id.genderBilinmiyor-> {
+                        R.id.genderBilinmiyor-> { //"bilinmiyor" default olarak gelir
                             et.setText(R.string.bilinmiyor)
                             return true
                         }
@@ -84,12 +85,13 @@ class KisiselBilgiler : AppCompatActivity() {
         }
 
 
-        //kaydetme sırasında hataları engellemek için boş yerin olmaması için parametreler tutulmuştur
+        //kaydetme sırasında hataları engellemek için , boş yerin olmaması için parametreler tutuldu
         editButtonKaydet.setOnClickListener {
 
             var degisiklikSayisi = 0
             var kayitSayisi = 0
             //her bir kısım için boşluk konrolü yapılır
+            //boş değilse değişiklik 1 artırılır
             if (!okunanKullaniciBilgileri.cinsiyet.equals(editCinsiyet.text.toString())){
                 degisiklikSayisi++
             }
@@ -195,9 +197,9 @@ class KisiselBilgiler : AppCompatActivity() {
 
         }
 
-    }
+    }//onCreate metot sonu
 
-    //bu sayılar bir birine eşitse çıkış yapılır böylece tüm veriler düzgün kaydedilmiş olur
+    //kaydet butonuna tıklandığında , bu sayılar birbirine eşitse çıkış yapılır böylece tüm veriler düzgün kaydedilmiş olur
     fun degisikliktenSonraCik(degisiklik:Int,kayit:Int){
         println(""+degisiklik+"  --  "+kayit)
         if (degisiklik == kayit){
@@ -223,6 +225,7 @@ class KisiselBilgiler : AppCompatActivity() {
                 override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {
                     if (p0!!.areAllPermissionsGranted()){
                         pickPP()
+                        //eğer tüm izinler verilmişse profil fotoğrafı seç
                     }
                 }
 
@@ -251,16 +254,16 @@ class KisiselBilgiler : AppCompatActivity() {
             val uploadTask = ref.putFile(ppUri!!)
 
             val urlTask = uploadTask.continueWithTask { task ->
-                if (!task.isSuccessful) {
+                if (!task.isSuccessful) { //yükleme başarılı değilse exception fırlatır
                     task.exception?.let {
                         throw it
                     }
                 }
                 ref.downloadUrl
             }.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    dialogYukleniyor.dismiss()
-                    Toast.makeText(this,"Fotoğraf günecllendi", Toast.LENGTH_SHORT).show()
+                if (task.isSuccessful) { //yükleme başarılıysa olacaklar
+                    dialogYukleniyor.dismiss() // Close Leave Details Dialog Fragment
+                    Toast.makeText(this,"Fotoğraf güncellendi", Toast.LENGTH_SHORT).show()
                     val downloadUri = task.result
                     mRef.child("users").child(okunanKullaniciBilgileri.user_id!!).child("user_detail").child("profile_picture").setValue(downloadUri.toString())
                         .addOnCompleteListener { p0->
