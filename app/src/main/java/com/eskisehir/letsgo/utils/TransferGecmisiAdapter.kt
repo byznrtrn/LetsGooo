@@ -35,7 +35,7 @@ class TransferGecmisiAdapter(context: Context, val ilanlar: ArrayList<String>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{
 
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.transfer_gecmisi,parent,false)
-
+    //tranfer_gecmisi layoutuyla bağladık
         mRef = FirebaseDatabase.getInstance().reference
         //photoUrl = FirebaseAuth.getInstance().currentUser!!.photoUrl.toString()
         currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
@@ -88,7 +88,7 @@ class TransferGecmisiAdapter(context: Context, val ilanlar: ArrayList<String>
                     holder.price.text = ilan.price.toString()
 
 
-                    mRef.child("users").child(ilan.userId!!.split("&")[0]).child("adi_soyadi")
+                    mRef.child("users").child(ilan.userId!!.split("&")[0]).child("adi_soyadi")//&'dan sonrası true ya da false
                             .addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onCancelled(p0: DatabaseError) {
                                     TODO("Not yet implemented")
@@ -113,7 +113,7 @@ class TransferGecmisiAdapter(context: Context, val ilanlar: ArrayList<String>
 
                                     @RequiresApi(Build.VERSION_CODES.O)
                                     override fun onDataChange(p0: DataSnapshot) {
-                                        if (p0.exists()){
+                                        if (p0.exists()){ //puan gösterilir
                                             println("geldin mi buraya")
                                             holder.tvPuanYok.visibility = View.GONE
                                             holder.rBar.visibility = View.VISIBLE
@@ -121,7 +121,7 @@ class TransferGecmisiAdapter(context: Context, val ilanlar: ArrayList<String>
                                             val puan = p0.getValue(Float::class.java)
                                             holder.rBar.rating = puan!!
 
-                                        }else{
+                                        }else{ //puan yok
                                             println("ya buraya")
 
                                             holder.tvPuanYok.visibility = View.VISIBLE
@@ -138,14 +138,14 @@ class TransferGecmisiAdapter(context: Context, val ilanlar: ArrayList<String>
 
 
                 }
-            }
+            }//ilk onDataChange metodunun sonu
 
         })
 
 
         holder.puanVer.setOnClickListener {
 
-            if (isMyIlan){
+            if (isMyIlan){ //benim ilanımsa yolcu puanlamaAct.ye gider
 
                 val intent = Intent(context,YolcuPuanlamaActivity::class.java)
                 intent.putExtra("ilanId",ilan.ilanId)
