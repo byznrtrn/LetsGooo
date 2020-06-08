@@ -16,6 +16,9 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
 
 class BottomNavigationViewHelper {
 
+    /* Kotlinde static properties ve fonsiyon yaratamayız ama companion object yaratabiliriz.
+    Bu objenin içine sınıfımızın içinde static olmasını istediğimiz properitsleri, constantları, fonksiyonları tanımlayabiliriz.
+     */
 
     companion object{
 //fragmentler tanımlandı
