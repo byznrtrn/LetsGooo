@@ -85,7 +85,7 @@ class YolcuPuanlamaAdapter(context: Context, val users: ArrayList<String>
 
                     @RequiresApi(Build.VERSION_CODES.O)
                     override fun onDataChange(p0: DataSnapshot) {
-                        if (p0.exists()){
+                        if (p0.exists()){ //puanı gösterir
                             println("geldin mi buraya")
                             holder.tvPuanYok.visibility = View.GONE
                             holder.rBar.visibility = View.VISIBLE
@@ -96,7 +96,7 @@ class YolcuPuanlamaAdapter(context: Context, val users: ArrayList<String>
                                 isFive = true
                             }
 
-                        }else{
+                        }else{ //puan yok
                             println("ya buraya")
 
                             holder.tvPuanYok.visibility = View.VISIBLE
