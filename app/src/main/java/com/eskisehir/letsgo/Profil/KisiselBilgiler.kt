@@ -262,7 +262,7 @@ class KisiselBilgiler : AppCompatActivity() {
                 ref.downloadUrl
             }.addOnCompleteListener { task ->
                 if (task.isSuccessful) { //yükleme başarılıysa olacaklar
-                    dialogYukleniyor.dismiss() // Close Leave Details Dialog Fragment
+                    dialogYukleniyor.dismiss() // Close Leave Dialog Fragment
                     Toast.makeText(this,"Fotoğraf güncellendi", Toast.LENGTH_SHORT).show()
                     val downloadUri = task.result
                     mRef.child("users").child(okunanKullaniciBilgileri.user_id!!).child("user_detail").child("profile_picture").setValue(downloadUri.toString())
