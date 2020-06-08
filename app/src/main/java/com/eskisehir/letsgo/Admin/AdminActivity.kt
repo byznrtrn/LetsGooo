@@ -72,6 +72,8 @@ class AdminActivity : AppCompatActivity() {
     //çıkış yapmak için menü tanımlandı
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.admin_menu,menu)
+
+      /*
         searchItem = menu!!.findItem(R.id.action_search)
         searcView = menu.findItem(R.id.action_search).actionView as SearchView?
 
@@ -87,7 +89,10 @@ class AdminActivity : AppCompatActivity() {
                 return false
             }
         })
-        // searcView = searchItem!!.actionView as SearchView?
+
+        */ //bu üstteki yorumu sonra açarız
+
+        // searcView = searchItem!!.actionView as SearchView? //bu hep yorumda kalsın
 
 
 
