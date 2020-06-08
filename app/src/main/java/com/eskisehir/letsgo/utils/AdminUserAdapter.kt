@@ -25,7 +25,7 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
     var context = context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{
-
+    //adapter'ımızı admin_user_view ile bağladık LayoutInflater sayesinde
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.admin_user_view,parent,false)
         mRef = FirebaseDatabase.getInstance().reference
 
@@ -38,41 +38,42 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
 
         holder.adSoyad.text = users[position].adi_soyadi
         UniversalImageLoader.setImage(users[position].profile_picture!!,holder.userPic,null,"")
-        if (users[position].statüs == 1){
+        if (users[position].statüs == 1){ //status=1 olması kullanıcının aktif olduğunu gösterir
             holder.sil.setImageResource(R.drawable.carpi)
         }else{
             holder.sil.setImageResource(R.drawable.check)
         }
 
-        ///burada userid sine göre kullanıcılar açık profile yönlendiriliyor
+        ///burada userid sine göre admin açık profile yönlendiriliyor
         //yollamak istediğim userId,hangi değeri yollamam gerektiği:users
         //position:hangi isme tıklandıysa onu yollucam diğer tarafa
         holder.userPic.setOnClickListener {
             val intent = Intent(context,AcikProfil::class.java)
             intent.putExtra("userId",users[position].user_id)
             context.startActivity(intent)
+            //böylece admin engellemeden önce kullanıcıların profil fotosuna tıklayarak profiline bakabilir.
 
         }
 
 
-        holder.sil.setOnClickListener {
+        holder.sil.setOnClickListener { //çarpıya tıkladığımızda olacaklar
 
-            if (users[position].statüs == 1){
+            if (users[position].statüs == 1){//eğer kullanıcı aktifse,engellemek için..
                 mRef.child("users").child(users[position].user_id!!).child("statüs").setValue(0)
                         .addOnCompleteListener { p0->
-                            if (p0.isSuccessful){
+                            if (p0.isSuccessful){//status 0 yapılır .bu engellendiği anlamına gelir.
                                 Toast.makeText(context,"Kullanıcı engellendi",Toast.LENGTH_LONG).show()
-                                holder.sil.setImageResource(R.drawable.check)
+                                holder.sil.setImageResource(R.drawable.check)//ve engellendikten sonra çarpı işareti yerine tik işareti gelir.
                                 users[position].statüs = 0
                             }
                         }
 
-            }else{
+            }else{//kullanıcı engelini kaldırmak için status 1 yapılır
                 mRef.child("users").child(users[position].user_id!!).child("statüs").setValue(1)
                         .addOnCompleteListener { p0->
                             if (p0.isSuccessful){
                                 Toast.makeText(context,"Engel Kaldırıldı",Toast.LENGTH_LONG).show()
-                                holder.sil.setImageResource(R.drawable.carpi)
+                                holder.sil.setImageResource(R.drawable.carpi)//ve tik işareti yerine çarpı işareti gelir.
                                 users[position].statüs = 1
                             }
                         }
