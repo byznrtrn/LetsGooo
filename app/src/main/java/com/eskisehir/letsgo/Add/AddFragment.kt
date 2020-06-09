@@ -169,7 +169,7 @@ class AddFragment : Fragment() {
         }
 
 
-        // ilan ver buyonuna basılınca boş alan var mı kontolleri yapılmalı
+        // ilan ver butonuna basılınca boş alan var mı kontolleri yapılmalı
         rootView.ilanVerButton.setOnClickListener {
 
             var bos_alan = 0

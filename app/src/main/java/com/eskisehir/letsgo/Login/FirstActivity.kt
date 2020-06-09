@@ -8,7 +8,7 @@ import com.eskisehir.letsgo.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_first.*
 
-//uygulama ilk açıldığında açılan uyguşlama
+//uygulama ilk açıldığında açılan uygulama
 class FirstActivity : AppCompatActivity() {
 //lateinit:sonradan tanımlayacağımızı belirtiyoruz...ayrıca başka yerde başlatılana kadar bellekte yer tutmaz
     lateinit var mAuth : FirebaseAuth
