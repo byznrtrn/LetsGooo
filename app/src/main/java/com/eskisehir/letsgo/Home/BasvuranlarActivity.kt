@@ -31,15 +31,15 @@ class BasvuranlarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_basvuranlar)
 
         val intent = intent
-        ilanId = intent.getStringExtra("ilanId")
+        ilanId = intent.getStringExtra("ilanId")//key değeri ilanId olan veriyi aldık
         kapasite = intent.getIntExtra("kapasite",0)
         guncelKapasite = kapasite
         println(ilanId)
         mRef = FirebaseDatabase.getInstance().reference
-        basvuranOnay = findViewById(R.id.basvuranOnay)
+        basvuranOnay = findViewById(R.id.basvuranOnay)//butonu aktiviteye bağlama işlemi
 
         //gelen ilanın id bilgisine göre başvuranlar veritabanından çekilir
-        mRef.child("ilanlar").child(ilanId).child("basvuranlar")
+        mRef.child("ilanlar").child(ilanId).child("basvuranlar")//ilanId'yi getStringExtra ile almıştık
                 .addValueEventListener(object : ValueEventListener{  //To read data at a path and listen for changes, use the addValueEventListener()
                     override fun onCancelled(p0: DatabaseError) {
                         TODO("Not yet implemented")
@@ -48,9 +48,9 @@ class BasvuranlarActivity : AppCompatActivity() {
                     override fun onDataChange(p0: DataSnapshot) {
                         if (p0.exists()){
                             basvuranlar.clear()
-                            tvBasvuranlar.visibility = View.GONE
-                            rvBasvuranlar.visibility = View.VISIBLE
-                            basvuranOnay.visibility = View.VISIBLE
+                            tvBasvuranlar.visibility = View.GONE //"ilana henüz basvuru yapılmadı" yazısı yok olur
+                            rvBasvuranlar.visibility = View.VISIBLE //basvuranlar listelenir
+                            basvuranOnay.visibility = View.VISIBLE //onay butonu aktif olur
 
                             //başvuranın durumuna göre liste oluşturulur
                             for (user in p0.children){
@@ -65,9 +65,9 @@ class BasvuranlarActivity : AppCompatActivity() {
                             rvBasvuranlar.adapter = adapter
 
                         }else{
-                            tvBasvuranlar.visibility = View.VISIBLE
+                            tvBasvuranlar.visibility = View.VISIBLE //"ilana henüz basvuru yapılmadı" yazısı gözükür
                             rvBasvuranlar.visibility = View.GONE
-                            basvuranOnay.visibility = View.GONE
+                            basvuranOnay.visibility = View.GONE //eğer ilana başvuru yapılmamışsa onay butonu görünmez
                         }
                     }
 
