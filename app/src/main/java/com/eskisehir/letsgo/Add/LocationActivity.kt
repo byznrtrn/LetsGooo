@@ -26,9 +26,9 @@ import java.util.*
 //haritadan lokasyon çekme ve marker ekleme kısımları burada yapılacak
 
 class LocationActivity : AppCompatActivity() {
-
     lateinit var mapFragment : SupportMapFragment
     lateinit var googleMap: GoogleMap
+    //lateinit ile GoogleMap tipinde googleMap objesini sonradan tanımlayacağımızı söylemiş olduk
 
     lateinit var locationManager: LocationManager
     private var hasGps = false
