@@ -48,6 +48,7 @@ class LocationActivity : AppCompatActivity() {
         mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         //supportFragmentManager.findFragmentById(R.id.map)-->haritayı burada tanımlıyoruz
         mapFragment.getMapAsync(OnMapReadyCallback {
+
            //haritanın başlatılması-initialize
             googleMap = it
             googleMap.isMyLocationEnabled = true
@@ -62,6 +63,7 @@ class LocationActivity : AppCompatActivity() {
 
                 val geocoder = Geocoder(this, Locale.getDefault())
                 val list:List<Address> = geocoder.getFromLocation(it.latitude,it.longitude,1)
+
                 //adres gösterimleri ülkeden ülye dilden dile değişir ama
                 //getDefault deyince kullanıcının bulunduğu konuma göre haritadaki adres bilgilerini getirecektir
                 isMarked = true
