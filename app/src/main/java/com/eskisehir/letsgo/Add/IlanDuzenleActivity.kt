@@ -29,7 +29,7 @@ import java.util.*
 
 class IlanDuzenleActivity : AppCompatActivity() {
     lateinit var gelenIlan : Ilan
-
+//ilan sayfasındaki objeleri kullanabilmek için inherit ettik
     var city = ""
     var lg = 0.0
     var lt = 0.0
