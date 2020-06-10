@@ -24,7 +24,7 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
     lateinit var mRef : DatabaseReference
     var context = context
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{//benden ViewHolder objesi döndürmemi istiyor
     //adapter'ımızı admin_user_view ile bağladık LayoutInflater sayesinde
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.admin_user_view,parent,false)
         mRef = FirebaseDatabase.getInstance().reference
@@ -35,7 +35,7 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
     }
 
     override fun onBindViewHolder(holder: ViewHolder , position: Int) {
-
+    //her bir recyclerview row'u içinde neler olacağını onBindViewHolder içine yazarız
         holder.adSoyad.text = users[position].adi_soyadi
         UniversalImageLoader.setImage(users[position].profile_picture!!,holder.userPic,null,"")
         if (users[position].statüs == 1){ //status=1 olması kullanıcının aktif olduğunu gösterir
@@ -87,7 +87,7 @@ class AdminUserAdapter (context: Context, var users: ArrayList<Users>
     }
 
     override fun getItemCount() = users.size
-
+//ne kadar kullanıcı varsa o kadar recyclerview satırı oluşturmak istediğimizi söyledik
 
 
 
