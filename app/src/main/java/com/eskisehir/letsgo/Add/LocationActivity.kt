@@ -48,11 +48,9 @@ class LocationActivity : AppCompatActivity() {
         mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         //supportFragmentManager.findFragmentById(R.id.map)-->haritayı burada tanımlıyoruz
         mapFragment.getMapAsync(OnMapReadyCallback {
-
            //haritanın başlatılması-initialize
             googleMap = it
             googleMap.isMyLocationEnabled = true
-
             //mapin üstüne tıklanması halinde burada tıklama işlemi dinleniyor
             googleMap.setOnMapClickListener { it ->
                 //allPoints.add(it)
@@ -63,12 +61,12 @@ class LocationActivity : AppCompatActivity() {
 
                 val geocoder = Geocoder(this, Locale.getDefault())
                 val list:List<Address> = geocoder.getFromLocation(it.latitude,it.longitude,1)
-
                 //adres gösterimleri ülkeden ülye dilden dile değişir ama
                 //getDefault deyince kullanıcının bulunduğu konuma göre haritadaki adres bilgilerini getirecektir
                 isMarked = true
                 lt = it.latitude
                 lg = it.longitude
+
                 //markerin olduğu yerde şehir yoksa uyarı verecek
                 if (list[0].adminArea == null){
                     Toast.makeText(this,"Lütfen şehir bölgesinden bir yer seçiniz",Toast.LENGTH_LONG).show()
@@ -116,8 +114,10 @@ class LocationActivity : AppCompatActivity() {
             googleMap.isMyLocationEnabled = true
             //kullanıcı konumu
             val location1 = LatLng(lat, lon)
+
             //kullanıcı konumuna marker koyduk
             googleMap.addMarker(MarkerOptions().position(location1).title("My Location"))
+
             //zoomlanacak yer ve oranı belirledik
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location1, 3f))
 
@@ -144,6 +144,7 @@ class LocationActivity : AppCompatActivity() {
 //gps veya network ile konum alma yeri, Hangisi daha hızlı verirse o konum ile dönüş yapıyor
     @SuppressLint("MissingPermission")
     private fun getLocation() {
+
     //izin verildiyse kullanıcı konumunu alcaz->location Managerla
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         hasGps = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
@@ -153,6 +154,7 @@ class LocationActivity : AppCompatActivity() {
             if (hasGps) {
                 Log.d("CodeAndroidLocation", "hasGps")
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0F, object : LocationListener {
+                    //
                     //requestLocationUpdates ile kullanıcının konumunu güncellendi
                     //update için istenen veriler
                     //1->provider->konumu neyle alcan
@@ -185,6 +187,7 @@ class LocationActivity : AppCompatActivity() {
                     }
 
                 })
+
 //daha önce bir location varsa onu alcaz
                 val localGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                 if (localGpsLocation != null)
