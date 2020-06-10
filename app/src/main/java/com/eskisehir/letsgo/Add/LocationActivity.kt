@@ -114,8 +114,11 @@ class LocationActivity : AppCompatActivity() {
             googleMap.clear()
             googleMap = it
             googleMap.isMyLocationEnabled = true
+            //kullanıcı konumu
             val location1 = LatLng(lat, lon)
+            //kullanıcı konumuna marker koyduk
             googleMap.addMarker(MarkerOptions().position(location1).title("My Location"))
+            //zoomlanacak yer ve oranı belirledik
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location1, 3f))
 
 
@@ -141,6 +144,7 @@ class LocationActivity : AppCompatActivity() {
 //gps veya network ile konum alma yeri, Hangisi daha hızlı verirse o konum ile dönüş yapıyor
     @SuppressLint("MissingPermission")
     private fun getLocation() {
+    //izin verildiyse kullanıcı konumunu alcaz->location Managerla
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         hasGps = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         hasNetwork = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
@@ -149,6 +153,13 @@ class LocationActivity : AppCompatActivity() {
             if (hasGps) {
                 Log.d("CodeAndroidLocation", "hasGps")
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0F, object : LocationListener {
+                    //requestLocationUpdates ile kullanıcının konumunu güncellendi
+                    //update için istenen veriler
+                    //1->provider->konumu neyle alcan
+                    //2->min tima=0 olursa konumu her saniye güncelle
+                    //3->min distanve ne kadar mesafede bir kontrol edilmeli
+                    //4->veriler nereye aktarılcak->location listener
+
                     override fun onLocationChanged(location: Location?) {
                         if (location != null && !hasLocation) {
 
@@ -174,7 +185,7 @@ class LocationActivity : AppCompatActivity() {
                     }
 
                 })
-
+//daha önce bir location varsa onu alcaz
                 val localGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                 if (localGpsLocation != null)
                     locationGps = localGpsLocation
