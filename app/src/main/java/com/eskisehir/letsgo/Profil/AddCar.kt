@@ -31,8 +31,8 @@ class AddCar : AppCompatActivity() {
     lateinit var gelenArabaBilgileri :  Car
     lateinit var mRef : DatabaseReference
     var ppUrl = ""
-    var ppUri : Uri? = null
-    val RESIM_SEC = 100
+    var ppUri : Uri? = null //fotografın kullanıcının telefonunda nerede kayıtlı onu alıyor
+    val RESIM_SEC = 100 //request code olarak bu değeri verdik
     lateinit var mStorageRef : StorageReference
     lateinit var mode :String
     lateinit var userId:String
@@ -197,7 +197,8 @@ class AddCar : AppCompatActivity() {
         }
     }
 
-    //bu fonksiyon bi çok defa çağırılır ama geri çıkması için tüm kayıtların bitmiş olması lazım. biten her kayıttan sonra burası çağırılır son kayıttan sonra çıkış yapılır
+    //bu fonksiyon bi çok defa çağırılır ama geri çıkması için tüm kayıtların bitmiş olması lazım.
+    // biten her kayıttan sonra burası çağırılır son kayıttan sonra çıkış yapılır
     fun degisikliktenSonraCik(degisiklik:Int,kayit:Int){
         println("$degisiklik  --  $kayit")
         if (degisiklik == kayit){
@@ -239,14 +240,14 @@ class AddCar : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == RESIM_SEC && resultCode == RESULT_OK && data!!.data != null){
-            ppUri = data.data
+            ppUri = data.data //secilen fotonun uri'ını alabilmek için bu kod
 
             var dialogYukleniyor = YukleniyorFragment()
             dialogYukleniyor.show(supportFragmentManager,"YukleniyorFragmenti")
 
 
             val ref = mStorageRef.child("users").child(userId).child("car").child("pic")
-            val uploadTask = ref.putFile(ppUri!!)
+            val uploadTask = ref.putFile(ppUri!!) //fotografı storage'a ekledik
 
             val urlTask = uploadTask.continueWithTask { task ->
                 if (!task.isSuccessful) {
