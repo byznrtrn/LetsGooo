@@ -133,6 +133,7 @@ class ChatActivity : AppCompatActivity() {
             var mesajText=etMesaj.text.toString().trim()
 
             if(!TextUtils.isEmpty(mesajText.toString())){
+                //mesajlar branchına eklemeler yapıldı
                 var mesajAtan=HashMap<String,Any>()
                 mesajAtan.put("mesaj",mesajText)
                 mesajAtan.put("goruldu",true)
