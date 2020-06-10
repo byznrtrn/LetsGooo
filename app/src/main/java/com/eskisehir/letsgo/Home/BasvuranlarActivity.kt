@@ -47,7 +47,7 @@ class BasvuranlarActivity : AppCompatActivity() {
 
                     override fun onDataChange(p0: DataSnapshot) {
                         if (p0.exists()){
-                            basvuranlar.clear()
+                            basvuranlar.clear() //aynı kişileri birden fazla kez göstermemesi için bunu yaptık
                             tvBasvuranlar.visibility = View.GONE //"ilana henüz basvuru yapılmadı" yazısı yok olur
                             rvBasvuranlar.visibility = View.VISIBLE //basvuranlar listelenir
                             basvuranOnay.visibility = View.VISIBLE //onay butonu aktif olur
