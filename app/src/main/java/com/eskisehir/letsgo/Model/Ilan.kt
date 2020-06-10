@@ -16,6 +16,7 @@ class Ilan {
 
     constructor(){}
     constructor(userId:String,ilanId:String,rotaDate:String,saat:String,kapasite:Int,price:Int,lt:Double,lg:Double,unix:Long){
+        //constructor içinde ilan için gerekli objeleri tanımlıyoruz sonra bunları ilandüzenleactivity sayfasında değiştirebiliyoruz
         this.userId = userId
         this.ilanId = ilanId
         this.rotaDate = rotaDate
