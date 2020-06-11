@@ -269,7 +269,7 @@ class IlanDetayActivity : AppCompatActivity(){
                                         mRef.child("basvurular").child(okunanUser.key!!).child(gelenIlan!!.ilanId!!).child("userId").setValue(okunanUser.key!!+"&false")
                                                 .addOnCompleteListener { p0 ->
                                                     if (p0.isSuccessful){
-                                                        var bakiye = currentBakiye + (gelenIlan!!.price!!*0.97 as Double)
+                                                        var bakiye = currentBakiye + (gelenIlan!!.price!!*0.97 as Double) //şirket komisyon alıyor
                                                         mRef.child("users").child(currentUserId).child("bakiye").setValue(bakiye).addOnCompleteListener {
                                                             if (p0.isSuccessful){
                                                                 kayit++
