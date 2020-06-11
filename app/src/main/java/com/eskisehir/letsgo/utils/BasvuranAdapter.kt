@@ -64,7 +64,7 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
 
         })
 
-            //bence burayı debug etmeliyiz
+
         if (!(basvuranlar[position].onay == 0)){
             holder.check.isChecked = true
             kapasaite--
