@@ -145,7 +145,7 @@ class KayitFragment : Fragment() {
             gelenSifre = kayitBilgileri.sifre!!
             gelenEmail = kayitBilgileri.email!!
 
-
+//mailin @ den sonraki kısmında edu varsa isEdu değerine 1 atandı
             if (gelenEmail.split("@")[1].contains(".edu.")){
                 isEdu = 1
             }
