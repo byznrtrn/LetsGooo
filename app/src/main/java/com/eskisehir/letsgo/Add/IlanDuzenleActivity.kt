@@ -48,7 +48,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
 
     //gelen ilan verilerini uygun şekilde bölümlere dolduruyoruz
     private fun setupIlanBilgileri() {
-
+//tarih formatı 14/05/2020 şeklinde olduğu için veriyi alırken splitle üçe böldük
         addNerden.setText(gelenIlan.rotaDate!!.split("&")[0])
         addNereye.setText(gelenIlan.rotaDate!!.split("&")[1])
         addDate.setText(gelenIlan.rotaDate!!.split("&")[2])
