@@ -64,6 +64,7 @@ class UniversalImageLoader(val mContext : Context) {
                 override fun onLoadingStarted(imageUri: String?, view: View?) {
                     if (mProgressBar != null){
                         mProgressBar.visibility = View.VISIBLE
+                        //fotoğraf yüklenirlen sayfada process bar görünür olur
                     }
                 }
 
