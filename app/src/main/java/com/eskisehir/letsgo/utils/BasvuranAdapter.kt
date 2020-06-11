@@ -65,7 +65,7 @@ class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,
         })
 
 
-        if (!(basvuranlar[position].onay == 0)){
+        if (!(basvuranlar[position].onay == 0)){ //onay 0 değilse checkbox tiklenmiş demektir
             holder.check.isChecked = true
             kapasaite--
             (context as BasvuranlarActivity).guncelKapasite = kapasaite
