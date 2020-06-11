@@ -26,7 +26,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class BasvuranAdapter(context: Context, var basvuranlar: ArrayList<Basvuranlar>,kapasite:Int
 ): RecyclerView.Adapter<BasvuranAdapter.ViewHolder>() {//RecyclerView.Adapter diyerek RecyclerView’den extend etme işlemini yaptık
 //ViewHolder, RecyclerView kullanımının performans açısından iyileştirilmesini sağlayan bir pattern’dir
-
+//databaseye atılan başvuran bilgilerini atmak için ---"basvuranlar"--- adında bir ---list view ----oluşturduk
     lateinit var mRef : DatabaseReference
     var context = context
     var kapasaite = kapasite
