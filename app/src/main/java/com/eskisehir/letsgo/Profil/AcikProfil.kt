@@ -76,10 +76,13 @@ class AcikProfil : AppCompatActivity() {
                             var puanSayisi = 0
                             var puanToplamı = 0
                             for (puan in p0.children){
+                                //puan verildiyse toplam puana ekleniyor
                                 puanSayisi++
                                 puanToplamı += puan.getValue(Int::class.java)!!
                             }
                             tvPuanSayisi.text = "($puanSayisi)"
+                            //kullanıcının puanını yıldızla göstermek için toplam puanların aritmetik ortalaması alınır
+                            // ve ratingbara gönderilir
                             var ort = puanToplamı.toDouble() / puanSayisi
                             ratingBar.rating = ort.toFloat()
 
