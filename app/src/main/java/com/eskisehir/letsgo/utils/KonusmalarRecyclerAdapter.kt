@@ -61,7 +61,7 @@ class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myC
             if(!konusmaText.isNullOrEmpty()){
                 konusmaText=konusmaText.replace("\n"," ")
                 konusmaText=konusmaText.trim()
-
+          //mesajın uzunluğu kontrol edilir eğer dolduysa alt satıra geçilir mesajın klanı alt satırda görünür
                 if(konusmaText.length>25){
                     enSonAtilanMesaj.text=konusmaText.substring(0,25)+"..."
                 }else{
