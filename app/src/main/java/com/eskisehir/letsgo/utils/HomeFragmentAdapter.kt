@@ -57,7 +57,7 @@ class HomeFragmentAdapter(context: Context, val ilanlar: ArrayList<Ilan>
 
         //parent:ilanView
         holder.parent.setOnClickListener {
-
+      //intent ile id alınıyor
             val intent = Intent(context,IlanDetayActivity::class.java)
             EventBus.getDefault().postSticky(EventbusDataEvents.ilanBilgileriniGonder(ilanlar[position]))
             context.startActivity(intent)
