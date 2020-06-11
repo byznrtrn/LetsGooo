@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onDataChange(p0: DataSnapshot) {
                     if (p0.exists()){
                         val user = p0.getValue(Users::class.java)!!
-                        if (user.statüs == 0){
+                        if (user.statüs == 0){//status 0sa engellenmiş demektir
                             Toast.makeText(this@MainActivity,"Üzgünüz Hesabınız Askıya Alınmıştır",Toast.LENGTH_LONG).show()
                             inactiveLayout.visibility = View.VISIBLE
                             activeLayout.visibility = View.GONE
