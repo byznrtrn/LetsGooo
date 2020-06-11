@@ -9,7 +9,7 @@ class Globals {
 //companion object=singleton
     companion object letsGo{
         var homeFragment : HomeFragment? = null
-//tek bir homefragment objesi oluşturup verilen ilanları buna atarız.??
+//tek bir homefragment objesi oluşturup buna HomeFragment sayfasında erişip değiştiriyoruz
 
         fun returnHome():HomeFragment?{
             return homeFragment
