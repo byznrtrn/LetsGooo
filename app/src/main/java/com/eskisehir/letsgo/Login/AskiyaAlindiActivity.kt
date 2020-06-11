@@ -24,7 +24,7 @@ class AskiyaAlindiActivity : AppCompatActivity() {
 
         tvCikisYap.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
-
+//çıkış yapıldığı için First activitye geri dönecek oradan ya loginactivitye yada registeractiviye gitcek
             AuthUI.getInstance().signOut(this)
                     .addOnCompleteListener {
                         startActivity(Intent(this, FirstActivity::class.java))
