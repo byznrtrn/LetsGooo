@@ -18,6 +18,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.tek_satir_konusma_item.view.*
 
+/**
+ * mesaj fragment görünümü
+ * */
+
 class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myContext: Context):
         androidx.recyclerview.widget.RecyclerView.Adapter<KonusmalarRecyclerAdapter.MyViewHolder>() {
 
@@ -94,7 +98,7 @@ class KonusmalarRecyclerAdapter(var tumKonusmalar:ArrayList<Konusmalar>, var myC
             }
 
             tumLayout.setOnClickListener {
-
+            //tıkladığımızda mesaj yazacağımız sayfaya gider
                 var intent= Intent(itemView.context, ChatActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                 intent.putExtra("userId", oankiKonusma.user_id.toString())
 
