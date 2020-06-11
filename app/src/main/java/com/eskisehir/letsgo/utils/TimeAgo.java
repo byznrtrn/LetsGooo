@@ -3,6 +3,10 @@ package com.eskisehir.letsgo.utils;
 public class TimeAgo {
 
 
+    /**
+     * Unix zaman, 1 Ocak 1970 den beri geçen her saniyeye verilen sayısal veri tipidir.
+     * */
+
     //klasik bir zaman hesaplayan algoritma. Unix değerine göre geçmişe yönelik hesaplamalar yapılıyor
 
     private static final int SECOND_MILLIS = 1000;
