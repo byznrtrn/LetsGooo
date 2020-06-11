@@ -120,6 +120,7 @@ class MessageFragment : Fragment() {
         }
 
         //yeni mesaj eklendiğinde burası çalışır
+        //yeni mesaj tumKonuşmalar arrayine atılır
 
         override fun onChildAdded(p0: DataSnapshot, p1: String?) {
             var eklenecekKonusma = p0!!.getValue(Konusmalar::class.java)
