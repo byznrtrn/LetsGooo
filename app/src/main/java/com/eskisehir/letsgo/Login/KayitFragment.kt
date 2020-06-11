@@ -61,7 +61,7 @@ class KayitFragment : Fragment() {
                     override fun onCancelled(p0: DatabaseError) {
                         println(p0.message)
                     }
-
+                 //aynı mail adresi ile tekrar kayıt olamazsın
                     override fun onDataChange(p0: DataSnapshot) {
                         if (p0.exists()){
                             Toast.makeText(activity!!,"Kullanıcı adı kullanımda",Toast.LENGTH_SHORT).show()
