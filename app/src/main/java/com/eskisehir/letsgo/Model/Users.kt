@@ -1,7 +1,7 @@
 package com.eskisehir.letsgo.Model
 
 class Users {
-    //kullanıcının kişisel bilgileri oluşturuldu
+    //kullanıcının kişisel bilgileri null olarak oluşturuldu
     var email: String? = null
     var username: String? = null
     var adi_soyadi: String? = null
@@ -17,7 +17,7 @@ class Users {
     var tercihler:Tercihler? = null
     var statüs : Int? = null
 
-
+//kullanıcı bilgilerinin kullanıldığı sınıflarda bu değerleri değiştirebilmek için bunları constructor oluşturup ona atıyoruz
     constructor() {}
     constructor(email: String?, username: String?, adi_soyadi: String?,cinsiyet:String?, phone_number: String?, user_id: String?,profile_picture:String?,ozgecmis:String?,dogumYili:String?,bakiye:Int?, rozetler: Rozetler?,car:Car?,tercihler:Tercihler?,statüs:Int?) {
         this.email = email
