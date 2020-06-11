@@ -56,7 +56,7 @@ class AddCar : AppCompatActivity() {
                 var degisiklikSayisi = 0
                 var kayitSayisi = 0
                 var bos_sayisi = 0
-
+        //arabayla ilgili özellilerin yerleri boş mu değil mi diye kontrol et
 
                 if (editMarka.text.toString().equals("")){
                     bos_sayisi++
@@ -84,7 +84,7 @@ class AddCar : AppCompatActivity() {
 
 
                 if (bos_sayisi==0){
-
+              //boş yer yoksa
                     if (!gelenArabaBilgileri.marka.equals(editMarka.text.toString())){
                         degisiklikSayisi++
                     }
