@@ -322,7 +322,8 @@ class IlanDuzenleActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         EventBus.getDefault().unregister(this)
-
+//subcricers Yalnızca  kayıt olurken event alacaklar
+        //unregister dediğimiz için artık eventi alamazlar
         /*
         * İlgili olayı artık dinlemek istemiyorsak veya onunla ilgili işlemimiz
         * bittiyse artık haberdar olmak istemediğimizi söylüyoruz

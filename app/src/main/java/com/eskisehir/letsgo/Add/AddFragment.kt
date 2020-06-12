@@ -292,6 +292,8 @@ class AddFragment : Fragment() {
         super.onStart()
         EventBus.getDefault().register(this)
         //activite başladığında register olmamız gerekiyor
+        //Subscribers also need to register
+        // themselves to and unregister from the bus. Only while subscribers are registered, they will receive events
     }
 
     override fun onStop() {
