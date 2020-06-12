@@ -83,7 +83,7 @@ class YolcuPuanlamaAdapter(context: Context, val users: ArrayList<String>
                         TODO("Not yet implemented")
                     }
 
-                    @RequiresApi(Build.VERSION_CODES.O)
+                    @RequiresApi(Build.VERSION_CODES.O)//telefon apisine göre hata almamak için bunu kullandık.0'dan düşüklerde burası çalışmayacak
                     override fun onDataChange(p0: DataSnapshot) {
                         if (p0.exists()){ //puanı gösterir
                             println("geldin mi buraya")
