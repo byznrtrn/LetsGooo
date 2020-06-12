@@ -283,7 +283,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
     */
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     internal fun onMyLocation(lokasyonBilgileri: EventbusDataEvents.lokasyonBilgileriniGonder){
-
+//UI thredindeki lokasyon bilgilerini @subcrice metodu çağırılır
         city = lokasyonBilgileri.City!!
         lt = lokasyonBilgileri.lt!!
         lg = lokasyonBilgileri.lg!!
@@ -296,7 +296,7 @@ class IlanDuzenleActivity : AppCompatActivity() {
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     internal fun onIlanBilgileri(ilanBilgileri: EventbusDataEvents.ilanBilgileriniGonder){
-
+//ilan bilgileri @subcrice metodu ile çağırılır
         gelenIlan = ilanBilgileri.ilan!!
 
         setupIlanBilgileri()
