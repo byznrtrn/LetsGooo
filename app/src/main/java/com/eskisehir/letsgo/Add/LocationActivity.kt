@@ -96,7 +96,7 @@ class LocationActivity : AppCompatActivity() {
         }
 
         konumOnayla.setOnClickListener {
-
+//lokasyon big event busa gidiyor
             EventBus.getDefault().postSticky(EventbusDataEvents.lokasyonBilgileriniGonder(cityName,lg,lt))
             onBackPressed()
 
